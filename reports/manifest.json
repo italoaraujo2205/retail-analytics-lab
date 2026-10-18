@@ -1,0 +1,22 @@
+{
+  "project_version": "0.1.0",
+  "synthetic": true,
+  "seed": 42,
+  "historical_start": "2025-01-01",
+  "historical_end": "2025-12-31",
+  "rfm_snapshot": "2026-01-01",
+  "experiment_window_days": 14,
+  "order_count": 24000,
+  "load_strategy": "atomic_full_snapshot_rebuild",
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "source_sha256": {
+    "customers.csv": "59a1fc6e7360863f87cc51c970d22c43b9a0c3c0a0bfd6c22f81d2a32745032a",
+    "experiment.csv": "86f3194ea18f0cfb2594112a4b876d23cc19a28ab5e1fdf43159a8f8b30b3a65",
+    "order_items.csv": "7b02ce7029073184be4aa395911074f48b83791f153ad32971b37aac13cde95d",
+    "orders.csv": "0a7df9d76218825d9a65e8590e33f8fe9aed3269a1c9d320e6ad33d83239d432",
+    "products.csv": "5b5345442dda175a1680a205bb35a62a1bd5d7819969aa2e6626af33c2f10b04"
+  }
+}

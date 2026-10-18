@@ -1,0 +1,22 @@
+{
+  "customers": {
+    "input_rows": 6000,
+    "accepted_rows": 6000,
+    "exact_duplicates_removed": 0
+  },
+  "products": {
+    "input_rows": 24,
+    "accepted_rows": 24,
+    "exact_duplicates_removed": 0
+  },
+  "orders": {
+    "input_rows": 24020,
+    "accepted_rows": 24000,
+    "exact_duplicates_removed": 20
+  },
+  "order_items": {
+    "input_rows": 47866,
+    "accepted_rows": 47866,
+    "exact_duplicates_removed": 0
+  }
+}

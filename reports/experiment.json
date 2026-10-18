@@ -1,0 +1,33 @@
+{
+  "primary_metric": "contribution_per_randomized_customer",
+  "currency": "BRL",
+  "unit": "randomized_customer",
+  "alpha": 0.05,
+  "srm_p_value": 0.07658140903567008,
+  "groups": {
+    "control": {
+      "n": 7888,
+      "conversion": 0.20360040567951318,
+      "mean_contribution": 13.60710826572008
+    },
+    "discount": {
+      "n": 8112,
+      "conversion": 0.2681213017751479,
+      "mean_contribution": 7.997003205128205
+    }
+  },
+  "difference": -5.610105060591875,
+  "ci_95": [
+    -6.364932650432804,
+    -4.855277470750947
+  ],
+  "welch_p_value": 1.1729244714599205e-47,
+  "bootstrap_ci_95": [
+    -6.369372101619418,
+    -4.902408509255316
+  ],
+  "bootstrap_samples": 1000,
+  "conversion_difference_pp": 6.452089609563474,
+  "decision": "Nao expandir o desconto",
+  "scope": "Synthetic fixed-horizon demonstration; not evidence about a real retailer."
+}

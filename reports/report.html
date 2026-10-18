@@ -1,0 +1,335 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Retail Analytics Lab — relatorio</title>
+<style>body{margin:0;background:#0b1320;color:#dce8f4;font:16px/1.6 system-ui,sans-serif}main{max-width:1200px;margin:auto;padding:28px}svg{width:100%;height:auto}section{margin:24px 0;padding:24px;background:#111e30;border-radius:12px}h1,h2{line-height:1.2}.tag{color:#62d4c0}.table{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px;text-align:right;border-bottom:1px solid #27364a}th:first-child,td:first-child{text-align:left}button{background:#62d4c0;border:0;border-radius:6px;padding:10px 16px;cursor:pointer}.muted{color:#9eafc1}@media print{body{background:white;color:black}section{background:white}button{display:none}}</style>
+<main><p class="tag">PORTFOLIO · DADOS SIMULADOS · ANO 2025</p><h1>Quando vender mais reduz o resultado</h1><p>Python, SQL e estatistica para avaliar um desconto pela contribuicao por cliente.</p><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+<title id="title">Retail Analytics Lab</title><desc id="desc">Dados simulados. Receita mensal, margem por categoria, retencao e experimento de desconto.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#dce8f4}.muted{fill:#9eafc1}.small{font-size:12px}.heading{font-size:18px;font-weight:700}</style>
+<rect width="1200" height="850" rx="20" fill="#0b1320"/>
+<text x="34" y="42" font-size="26" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#dce8f4" text-anchor="start">RETAIL ANALYTICS LAB</text>
+<text x="34" y="67" font-size="17" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Mais conversao significa mais lucro?</text>
+<text x="1160" y="42" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="end">SIMULACAO | 2025 | BRL</text>
+<rect x="30.00" y="92.00" width="272.00" height="80.00" fill="#152235" rx="9"/>
+<text x="45" y="117" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">RECEITA LIQUIDA</text>
+<text x="45" y="149" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">R$ 16.424.057,66</text>
+<rect x="320.00" y="92.00" width="272.00" height="80.00" fill="#152235" rx="9"/>
+<text x="335" y="117" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">CONTRIBUICAO</text>
+<text x="335" y="149" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">R$ 5.305.344,41</text>
+<rect x="610.00" y="92.00" width="272.00" height="80.00" fill="#152235" rx="9"/>
+<text x="625" y="117" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">MARGEM DE CONTRIBUICAO</text>
+<text x="625" y="149" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">32.3%</text>
+<rect x="900.00" y="92.00" width="272.00" height="80.00" fill="#152235" rx="9"/>
+<text x="915" y="117" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">PEDIDOS ENTREGUES</text>
+<text x="915" y="149" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">22.075</text>
+<rect x="30.00" y="194.00" width="550.00" height="293.00" fill="#111e30" rx="9"/>
+<rect x="620.00" y="194.00" width="550.00" height="293.00" fill="#111e30" rx="9"/>
+<rect x="30.00" y="507.00" width="550.00" height="313.00" fill="#111e30" rx="9"/>
+<rect x="620.00" y="507.00" width="550.00" height="313.00" fill="#111e30" rx="9"/>
+<text x="50" y="224" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#dce8f4" text-anchor="start">Receita por mes</text>
+<text x="50" y="244" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Promocoes e sazonalidade foram simuladas.</text>
+<rect x="54.00" y="334.80" width="27.00" height="111.20" fill="#62d4c0" rx="3"/>
+<text x="67" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">01</text>
+<rect x="96.00" y="348.30" width="27.00" height="97.70" fill="#62d4c0" rx="3"/>
+<text x="109" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">02</text>
+<rect x="138.00" y="334.04" width="27.00" height="111.96" fill="#62d4c0" rx="3"/>
+<text x="151" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">03</text>
+<rect x="180.00" y="337.02" width="27.00" height="108.98" fill="#62d4c0" rx="3"/>
+<text x="193" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">04</text>
+<rect x="222.00" y="336.50" width="27.00" height="109.50" fill="#62d4c0" rx="3"/>
+<text x="235" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">05</text>
+<rect x="264.00" y="343.34" width="27.00" height="102.66" fill="#62d4c0" rx="3"/>
+<text x="277" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">06</text>
+<rect x="306.00" y="337.58" width="27.00" height="108.42" fill="#62d4c0" rx="3"/>
+<text x="319" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">07</text>
+<rect x="348.00" y="341.28" width="27.00" height="104.72" fill="#62d4c0" rx="3"/>
+<text x="361" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">08</text>
+<rect x="390.00" y="336.26" width="27.00" height="109.74" fill="#62d4c0" rx="3"/>
+<text x="403" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">09</text>
+<rect x="432.00" y="333.24" width="27.00" height="112.76" fill="#62d4c0" rx="3"/>
+<text x="445" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">10</text>
+<rect x="474.00" y="271.00" width="27.00" height="175.00" fill="#f6b96b" rx="3"/>
+<text x="487" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">11</text>
+<rect x="516.00" y="295.10" width="27.00" height="150.90" fill="#62d4c0" rx="3"/>
+<text x="529" y="466" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">12</text>
+<text x="54" y="482" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Pico: R$ 2.047.847,70 | eixo vertical com origem zero</text>
+<text x="642" y="224" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#dce8f4" text-anchor="start">Margem bruta por categoria</text>
+<text x="642" y="244" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Receita menos CMV; exclui logistica.</text>
+<text x="642" y="293" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Moda</text>
+<rect x="758.00" y="278.00" width="259.20" height="22.00" fill="#7ea7fa" rx="3"/>
+<text x="1147" y="294" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="end">37.0%</text>
+<text x="642" y="343" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Casa</text>
+<rect x="758.00" y="328.00" width="256.89" height="22.00" fill="#7ea7fa" rx="3"/>
+<text x="1147" y="344" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="end">36.7%</text>
+<text x="642" y="393" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Esporte</text>
+<rect x="758.00" y="378.00" width="226.21" height="22.00" fill="#7ea7fa" rx="3"/>
+<text x="1147" y="394" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="end">32.3%</text>
+<text x="642" y="443" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Tecnologia</text>
+<rect x="758.00" y="428.00" width="197.04" height="22.00" fill="#7ea7fa" rx="3"/>
+<text x="1147" y="444" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="end">28.1%</text>
+<text x="642" y="482" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Barras: escala de 0% a 50%</text>
+<text x="50" y="537" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#dce8f4" text-anchor="start">Retencao por coorte</text>
+<text x="50" y="558" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Compra no mes; janelas incompletas ficam cinza.</text>
+<text x="230" y="583" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">M0</text>
+<text x="318" y="583" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">M1</text>
+<text x="406" y="583" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">M2</text>
+<text x="494" y="583" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="middle">M3</text>
+<text x="52" y="614" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">2025-07</text>
+<rect x="190.00" y="596.00" width="80.00" height="25.00" fill="rgb(48,175,167)" rx="3"/>
+<text x="230" y="613" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">100%</text>
+<rect x="278.00" y="596.00" width="80.00" height="25.00" fill="rgb(32,94,109)" rx="3"/>
+<text x="318" y="613" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">23%</text>
+<rect x="366.00" y="596.00" width="80.00" height="25.00" fill="rgb(33,96,110)" rx="3"/>
+<text x="406" y="613" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">25%</text>
+<rect x="454.00" y="596.00" width="80.00" height="25.00" fill="rgb(32,92,108)" rx="3"/>
+<text x="494" y="613" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">21%</text>
+<text x="52" y="644" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">2025-08</text>
+<rect x="190.00" y="626.00" width="80.00" height="25.00" fill="rgb(48,175,167)" rx="3"/>
+<text x="230" y="643" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">100%</text>
+<rect x="278.00" y="626.00" width="80.00" height="25.00" fill="rgb(32,92,108)" rx="3"/>
+<text x="318" y="643" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">21%</text>
+<rect x="366.00" y="626.00" width="80.00" height="25.00" fill="rgb(33,97,111)" rx="3"/>
+<text x="406" y="643" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">27%</text>
+<rect x="454.00" y="626.00" width="80.00" height="25.00" fill="rgb(35,108,119)" rx="3"/>
+<text x="494" y="643" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">37%</text>
+<text x="52" y="674" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">2025-09</text>
+<rect x="190.00" y="656.00" width="80.00" height="25.00" fill="rgb(48,175,167)" rx="3"/>
+<text x="230" y="673" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">100%</text>
+<rect x="278.00" y="656.00" width="80.00" height="25.00" fill="rgb(33,98,112)" rx="3"/>
+<text x="318" y="673" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">27%</text>
+<rect x="366.00" y="656.00" width="80.00" height="25.00" fill="rgb(35,111,121)" rx="3"/>
+<text x="406" y="673" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">39%</text>
+<rect x="454.00" y="656.00" width="80.00" height="25.00" fill="rgb(35,107,118)" rx="3"/>
+<text x="494" y="673" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">35%</text>
+<text x="52" y="704" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">2025-10</text>
+<rect x="190.00" y="686.00" width="80.00" height="25.00" fill="rgb(48,175,167)" rx="3"/>
+<text x="230" y="703" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">100%</text>
+<rect x="278.00" y="686.00" width="80.00" height="25.00" fill="rgb(36,114,123)" rx="3"/>
+<text x="318" y="703" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">42%</text>
+<rect x="366.00" y="686.00" width="80.00" height="25.00" fill="rgb(33,100,113)" rx="3"/>
+<text x="406" y="703" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">29%</text>
+<rect x="454.00" y="686.00" width="80.00" height="25.00" fill="#263345" rx="3"/>
+<text x="494" y="703" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">--</text>
+<text x="52" y="734" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">2025-11</text>
+<rect x="190.00" y="716.00" width="80.00" height="25.00" fill="rgb(48,175,167)" rx="3"/>
+<text x="230" y="733" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">100%</text>
+<rect x="278.00" y="716.00" width="80.00" height="25.00" fill="rgb(35,106,118)" rx="3"/>
+<text x="318" y="733" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">35%</text>
+<rect x="366.00" y="716.00" width="80.00" height="25.00" fill="#263345" rx="3"/>
+<text x="406" y="733" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">--</text>
+<rect x="454.00" y="716.00" width="80.00" height="25.00" fill="#263345" rx="3"/>
+<text x="494" y="733" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">--</text>
+<text x="52" y="764" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">2025-12</text>
+<rect x="190.00" y="746.00" width="80.00" height="25.00" fill="rgb(48,175,167)" rx="3"/>
+<text x="230" y="763" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">100%</text>
+<rect x="278.00" y="746.00" width="80.00" height="25.00" fill="#263345" rx="3"/>
+<text x="318" y="763" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">--</text>
+<rect x="366.00" y="746.00" width="80.00" height="25.00" fill="#263345" rx="3"/>
+<text x="406" y="763" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">--</text>
+<rect x="454.00" y="746.00" width="80.00" height="25.00" fill="#263345" rx="3"/>
+<text x="494" y="763" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="middle">--</text>
+<text x="50" y="801" font-size="11" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">M0 = mes da primeira compra; nao equivale a churn.</text>
+<text x="642" y="537" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#dce8f4" text-anchor="start">Desconto de 15%: teste A/B</text>
+<text x="642" y="558" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Metrica primaria: contribuicao por cliente sorteado.</text>
+<text x="642" y="603" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Controle</text>
+<rect x="748.00" y="588.00" width="258.54" height="24.00" fill="#62d4c0" rx="3"/>
+<text x="1137" y="604" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="end">R$ 13,61</text>
+<text x="748" y="631" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Conversao: 20.4% | n = 7888</text>
+<text x="642" y="669" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Desconto</text>
+<rect x="748.00" y="654.00" width="151.94" height="24.00" fill="#f6b96b" rx="3"/>
+<text x="1137" y="670" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="end">R$ 8,00</text>
+<text x="748" y="697" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">Conversao: 26.8% | n = 8112</text>
+<text x="642" y="740" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#dce8f4" text-anchor="start">Efeito: R$ -5,61 por cliente</text>
+<text x="642" y="764" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#9eafc1" text-anchor="start">IC 95%: [R$ -6,36; R$ -4,86]</text>
+<text x="642" y="795" font-size="17" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#dce8f4" text-anchor="start">Nao expandir o desconto</text>
+</svg>
+<section><h2>Nao expandir o desconto</h2><p>A conversao variou +6.45 p.p., enquanto a contribuicao por cliente variou R$ -5,61. IC 95%: [R$ -6,36; R$ -4,86]. Todos os clientes sorteados entram na conta, inclusive quem nao comprou.</p><p class="muted">O efeito e programado na simulacao. O resultado nao descreve uma empresa real nem demonstra retorno comercial real.</p></section>
+<button onclick="document.getElementById('details').hidden=!document.getElementById('details').hidden">Mostrar ou ocultar tabelas</button><div id="details"><section><h2>Indicadores mensais</h2><div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>month</th>
+      <th>delivered_orders</th>
+      <th>active_customers</th>
+      <th>net_revenue</th>
+      <th>contribution</th>
+      <th>average_ticket</th>
+      <th>contribution_margin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-01</td>
+      <td>1679</td>
+      <td>1458</td>
+      <td>1,301,298.25</td>
+      <td>440,882.52</td>
+      <td>775.04</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-02</td>
+      <td>1507</td>
+      <td>1331</td>
+      <td>1,143,231.48</td>
+      <td>391,291.58</td>
+      <td>758.61</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-03</td>
+      <td>1704</td>
+      <td>1465</td>
+      <td>1,310,206.54</td>
+      <td>443,267.95</td>
+      <td>768.90</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-04</td>
+      <td>1670</td>
+      <td>1459</td>
+      <td>1,275,249.50</td>
+      <td>431,174.31</td>
+      <td>763.62</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-05</td>
+      <td>1705</td>
+      <td>1483</td>
+      <td>1,281,331.33</td>
+      <td>434,408.46</td>
+      <td>751.51</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-06</td>
+      <td>1574</td>
+      <td>1390</td>
+      <td>1,201,276.46</td>
+      <td>406,737.22</td>
+      <td>763.20</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-07</td>
+      <td>1682</td>
+      <td>1474</td>
+      <td>1,268,676.45</td>
+      <td>430,636.65</td>
+      <td>754.27</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-08</td>
+      <td>1619</td>
+      <td>1421</td>
+      <td>1,225,411.32</td>
+      <td>414,497.58</td>
+      <td>756.89</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-09</td>
+      <td>1666</td>
+      <td>1454</td>
+      <td>1,284,221.81</td>
+      <td>431,795.57</td>
+      <td>770.84</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-10</td>
+      <td>1743</td>
+      <td>1486</td>
+      <td>1,319,520.20</td>
+      <td>444,283.09</td>
+      <td>757.04</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>3204</td>
+      <td>2469</td>
+      <td>2,047,847.70</td>
+      <td>437,908.06</td>
+      <td>639.15</td>
+      <td>0.21</td>
+    </tr>
+    <tr>
+      <td>2025-12</td>
+      <td>2322</td>
+      <td>1930</td>
+      <td>1,765,786.62</td>
+      <td>598,461.42</td>
+      <td>760.46</td>
+      <td>0.34</td>
+    </tr>
+  </tbody>
+</table></div></section><section><h2>Categorias</h2><div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>category</th>
+      <th>net_revenue</th>
+      <th>gross_profit</th>
+      <th>gross_margin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Casa</td>
+      <td>4,384,630.23</td>
+      <td>1,609,108.37</td>
+      <td>0.37</td>
+    </tr>
+    <tr>
+      <td>Esporte</td>
+      <td>3,717,761.52</td>
+      <td>1,201,440.51</td>
+      <td>0.32</td>
+    </tr>
+    <tr>
+      <td>Moda</td>
+      <td>4,606,138.34</td>
+      <td>1,705,615.92</td>
+      <td>0.37</td>
+    </tr>
+    <tr>
+      <td>Tecnologia</td>
+      <td>3,715,527.57</td>
+      <td>1,045,843.23</td>
+      <td>0.28</td>
+    </tr>
+  </tbody>
+</table></div></section><section><h2>Segmentos RFM</h2><div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>segment</th>
+      <th>customers</th>
+      <th>average_recency</th>
+      <th>average_frequency</th>
+      <th>revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Demais clientes</td>
+      <td>2344</td>
+      <td>55.55</td>
+      <td>2.93</td>
+      <td>5,076,927.79</td>
+    </tr>
+    <tr>
+      <td>Recentes frequentes</td>
+      <td>2258</td>
+      <td>27.65</td>
+      <td>5.39</td>
+      <td>9,036,155.42</td>
+    </tr>
+    <tr>
+      <td>Sem compra ha mais de 120 dias</td>
+      <td>1225</td>
+      <td>201.49</td>
+      <td>2.47</td>
+      <td>2,310,974.45</td>
+    </tr>
+  </tbody>
+</table></div></section></div>
+<section><h2>Como ler</h2><p>Receita liquida = vendas entregues apos descontos. Contribuicao = receita menos CMV e logistica. Margem bruta por categoria exclui logistica. Celulas cinza nas coortes representam janelas incompletas.</p><p>Serie historica observacional; experimento independente com alocacao 50/50 esperada. Horizonte fixo de 14 dias, uma metrica primaria, teste de Welch e bootstrap por cliente.</p><p class="muted">Nao inclui impostos, custos fixos, custo de aquisicao nem efeitos de longo prazo. Consulte docs/experiment_design.md e reports/executive_summary.md.</p></section></main></html>
