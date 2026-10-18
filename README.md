@@ -4,7 +4,7 @@
 
 Laboratório de análise de varejo com Python, SQL e estatística. Integra geração de dados simulados, validações, Data Warehouse local, indicadores, coortes, RFM e um experimento cujo critério de decisão é contribuição por cliente.
 
-> **Dados integralmente simulados.** Este é um projeto de portfólio, desenvolvido com assistência de IA. Os números não são resultados de clientes ou de uma empresa real. O mecanismo do desconto está definido no gerador e serve para demonstrar o método.
+> **Dados integralmente simulados.** Os números não são resultados de clientes ou de uma empresa real. O mecanismo do desconto está definido no gerador e serve para demonstrar o método.
 
 ![Visão geral dos resultados](reports/figures/overview.svg)
 
